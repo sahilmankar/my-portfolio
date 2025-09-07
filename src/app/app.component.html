@@ -1,41 +1,72 @@
 <!-- Header -->
-<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 transition-all duration-300 border-b border-gray-200">
+<header
+  class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 transition-all duration-300 border-b border-gray-200">
   <nav class="py-4">
     <div class="max-w-6xl mx-auto px-5 flex justify-between items-center">
       <div class="nav-brand">
         <h2 class="text-2xl font-bold text-gray-800">Sahil Mankar</h2>
       </div>
-      
+
       <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-8">
-        <li><a href="#home" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('home')">Home</a></li>
-        <li><a href="#about" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('about')">About</a></li>
-        <li><a href="#experience" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('experience')">Experience</a></li>
-        <li><a href="#skills" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('skills')">Skills</a></li>
-        <li><a href="#projects" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('projects')">Projects</a></li>
-        <li><a href="#education" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('education')">Education</a></li>
-        <li><a href="#contact" class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full" (click)="scrollToSection('contact')">Contact</a></li>
+        <li><a href="#home"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('home')">Home</a></li>
+        <li><a href="#about"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('about')">About</a></li>
+        <li><a href="#experience"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('experience')">Experience</a></li>
+        <li><a href="#skills"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('skills')">Skills</a></li>
+        <li><a href="#projects"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('projects')">Projects</a></li>
+        <li><a href="#education"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('education')">Education</a></li>
+        <li><a href="#contact"
+            class="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-green-500 after:transition-all after:duration-300 hover:after:w-full"
+            (click)="scrollToSection('contact')">Contact</a></li>
       </ul>
-      
+
       <!-- Mobile Menu Button -->
       <div class="md:hidden flex flex-col cursor-pointer" (click)="toggleMenu()">
-        <span class="w-6 h-0.5 bg-gray-800 mb-1 transition-all duration-300" [class.rotate-45]="isMenuOpen" [class.translate-y-1.5]="isMenuOpen"></span>
+        <span class="w-6 h-0.5 bg-gray-800 mb-1 transition-all duration-300" [class.rotate-45]="isMenuOpen"
+          [class.translate-y-1.5]="isMenuOpen"></span>
         <span class="w-6 h-0.5 bg-gray-800 mb-1 transition-all duration-300" [class.opacity-0]="isMenuOpen"></span>
-        <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300" [class.-rotate-45]="isMenuOpen" [class.-translate-y-1.5]="isMenuOpen"></span>
+        <span class="w-6 h-0.5 bg-gray-800 transition-all duration-300" [class.-rotate-45]="isMenuOpen"
+          [class.-translate-y-1.5]="isMenuOpen"></span>
       </div>
     </div>
-    
+
     <!-- Mobile Menu -->
     <div class="md:hidden" [class.hidden]="!isMenuOpen" [class.block]="isMenuOpen">
       <div class="bg-white border-t border-gray-200 shadow-lg">
         <ul class="py-4 space-y-2">
-          <li><a href="#home" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('home')">Home</a></li>
-          <li><a href="#about" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('about')">About</a></li>
-          <li><a href="#experience" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('experience')">Experience</a></li>
-          <li><a href="#skills" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('skills')">Skills</a></li>
-          <li><a href="#projects" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('projects')">Projects</a></li>
-          <li><a href="#education" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('education')">Education</a></li>
-          <li><a href="#contact" class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300" (click)="scrollToSection('contact')">Contact</a></li>
+          <li><a href="#home"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('home')">Home</a></li>
+          <li><a href="#about"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('about')">About</a></li>
+          <li><a href="#experience"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('experience')">Experience</a></li>
+          <li><a href="#skills"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('skills')">Skills</a></li>
+          <li><a href="#projects"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('projects')">Projects</a></li>
+          <li><a href="#education"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('education')">Education</a></li>
+          <li><a href="#contact"
+              class="block px-5 py-3 text-gray-700 hover:text-blue-500 hover:bg-gray-50 font-medium transition-colors duration-300"
+              (click)="scrollToSection('contact')">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -43,42 +74,54 @@
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white relative overflow-hidden pt-20 pb-2">
+<section id="home"
+  class="min-h-screen flex items-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white relative overflow-hidden pt-20 pb-2">
   <div class="absolute inset-0 bg-black/20"></div>
   <div class="max-w-6xl mx-auto px-5 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="text-center lg:text-left">
         <h1 class="text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-          Hi, I'm <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Sahil Mankar</span>
+          Hi, I'm <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Sahil
+            Mankar</span>
         </h1>
         <h2 class="text-2xl font-light mb-6 opacity-90">Software Engineer</h2>
         <p class="text-lg mb-8 opacity-80 leading-relaxed">
-          Passionate about building scalable and user-centric web applications using Angular, .NET, and modern technologies.
+          Passionate about building scalable and user-centric web applications using Angular, .NET, and modern
+          technologies.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-          <a href="#projects" class="inline-block px-8 py-3 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white font-semibold rounded-full transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg" (click)="scrollToSection('projects')">View My Work</a>
-          <a href="#contact" class="inline-block px-8 py-3 border-2 border-white text-white font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-gray-800" (click)="scrollToSection('contact')">Get In Touch</a>
+          <a href="#projects"
+            class="inline-block px-8 py-3 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white font-semibold rounded-full transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg"
+            (click)="scrollToSection('projects')">View My Work</a>
+          <a href="#contact"
+            class="inline-block px-8 py-3 border-2 border-white text-white font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-gray-800"
+            (click)="scrollToSection('contact')">Get In Touch</a>
         </div>
         <div class="flex gap-4 justify-center lg:justify-start">
-          <a href="https://github.com/sahilmankar" target="_blank" rel="noopener" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
+          <a href="https://github.com/sahilmankar" target="_blank" rel="noopener"
+            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
             <i class="fab fa-github text-xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/sahil-mankar-a64670232/" target="_blank" rel="noopener" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
+          <a href="https://www.linkedin.com/in/sahil-mankar-a64670232/" target="_blank" rel="noopener"
+            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
             <i class="fab fa-linkedin text-xl"></i>
           </a>
-          <a href="mailto:sahilmankar311&#64;gmail.com" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
+          <a href="mailto:sahilmankar311&#64;gmail.com"
+            class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1">
             <i class="fas fa-envelope text-xl"></i>
           </a>
         </div>
       </div>
       <div class="flex justify-center lg:justify-md">
         <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 text-center border border-white/20 max-w-sm w-96">
-          <div class="w-36 h-36 bg-gradient-to-br  from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-6xl text-white">
-           <img src="https://avatars.githubusercontent.com/u/110836726?s=400&u=05a1298a671ccf8396d53879db23de326e33ee46&v=4"
-     class="w-36 h-36 rounded-full border-2 border-gray-200 shadow-md hover:scale-105 transition-transform duration-300"/>
+          <div
+            class="w-36 h-36 bg-gradient-to-br  from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-6xl text-white">
+            <img
+              src="https://avatars.githubusercontent.com/u/110836726?s=400&u=05a1298a671ccf8396d53879db23de326e33ee46&v=4"
+              class="w-36 h-36 rounded-full border-2 border-gray-200 shadow-md hover:scale-105 transition-transform duration-300" />
 
             <!-- <i class="fas fa-user"></i> -->
-             <!-- <img src="https://avatars.githubusercontent.com/u/110836726?s=400&u=05a1298a671ccf8396d53879db23de326e33ee46&v=4" class="rounded-4"/> -->
+            <!-- <img src="https://avatars.githubusercontent.com/u/110836726?s=400&u=05a1298a671ccf8396d53879db23de326e33ee46&v=4" class="rounded-4"/> -->
           </div>
           <h3 class="text-2xl font-bold mb-2">Sahil Mankar</h3>
           <p class="text-lg opacity-80 mb-4">Software Engineer</p>
@@ -97,18 +140,21 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 relative">
       About Me
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full">
+      </div>
     </h2>
     <div class="max-w-4xl mx-auto text-center">
       <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
         <p>
-          Software Engineer with hands-on experience in developing scalable and user-centric web applications using 
-          Angular, .NET (Framework/Core), ASP.NET MVC, ASP.NET Core Web API, and JavaScript. Proficient in jQuery, 
-          Bootstrap, SQL Server, and MySQL, with a solid understanding of Git and GitHub for version control and collaboration.
+          Software Engineer with hands-on experience in developing scalable and user-centric web applications using
+          Angular, .NET (Framework/Core), ASP.NET MVC, ASP.NET Core Web API, and JavaScript. Proficient in jQuery,
+          Bootstrap, SQL Server, and MySQL, with a solid understanding of Git and GitHub for version control and
+          collaboration.
         </p>
         <p>
-          Known for writing clean, maintainable, and high-performance code, with a strong focus on problem-solving, 
-          team collaboration, and continuous learning. Passionate about building real-world solutions and exploring 
+          Known for writing clean, maintainable, and high-performance code, with a strong focus on problem-solving,
+          team collaboration, and continuous learning. Passionate about building real-world solutions and exploring
           emerging technologies to drive innovation and efficiency.
         </p>
       </div>
@@ -135,15 +181,21 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 relative">
       Professional Experience
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full">
+      </div>
     </h2>
     <div class="relative max-w-4xl mx-auto">
       <!-- Timeline line -->
-      <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b  from-indigo-500 to-purple-500 transform md:-translate-x-0.5"></div>
-      
+      <div
+        class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b  from-indigo-500 to-purple-500 transform md:-translate-x-0.5">
+      </div>
+
       <!-- Timeline Item 1 -->
       <div class="relative mb-12">
-        <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full transform md:-translate-x-2 z-10 border-4 border-white shadow-lg"></div>
+        <div
+          class="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full transform md:-translate-x-2 z-10 border-4 border-white shadow-lg">
+        </div>
         <div class="ml-16 md:ml-0 md:w-1/2 md:pr-8">
           <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div class="mb-4">
@@ -158,32 +210,39 @@
             <ul class="space-y-2 text-gray-600">
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Developed key modules including User Management, Employee Onboarding, Attendance Processing, Salary Processing, Contractor Billing, and Notification Management</span>
+                <span>Developed key modules including User Management, Employee Onboarding, Attendance Processing,
+                  Salary Processing, Contractor Billing, and Notification Management</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Identified performance bottlenecks and implemented parallel request processing, resulting in significant improvements to application responsiveness</span>
+                <span>Identified performance bottlenecks and implemented parallel request processing, resulting in
+                  significant improvements to application responsiveness</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Designed, developed, and maintained scalable applications using .NET Framework, ASP.NET Core Web API</span>
+                <span>Designed, developed, and maintained scalable applications using .NET Framework, ASP.NET Core Web
+                  API</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Diagnosed and resolved issues in database stored procedures and functions, focusing on optimizing performance</span>
+                <span>Diagnosed and resolved issues in database stored procedures and functions, focusing on optimizing
+                  performance</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Worked closely with cross-functional teams to gather requirements and deliver effective software solutions</span>
+                <span>Worked closely with cross-functional teams to gather requirements and deliver effective software
+                  solutions</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      
+
       <!-- Timeline Item 2 -->
       <div class="relative mb-12">
-        <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full transform md:-translate-x-2 z-10 border-4 border-white shadow-lg"></div>
+        <div
+          class="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full transform md:-translate-x-2 z-10 border-4 border-white shadow-lg">
+        </div>
         <div class="ml-16 md:ml-0 md:w-1/2 md:ml-auto md:pl-8">
           <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div class="mb-4">
@@ -198,11 +257,13 @@
             <ul class="space-y-2 text-gray-600">
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Gained practical experience building full-stack applications using .NET Core Web API, .NET Core MVC, MySQL, and Angular</span>
+                <span>Gained practical experience building full-stack applications using .NET Core Web API, .NET Core
+                  MVC, MySQL, and Angular</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
-                <span>Documented and tested RESTful APIs using Postman as part of end-to-end feature integration within Agile sprints</span>
+                <span>Documented and tested RESTful APIs using Postman as part of end-to-end feature integration within
+                  Agile sprints</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-500 mt-1">▶</span>
@@ -225,18 +286,17 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 relative">
       Technical Skills
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full">
+      </div>
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+      <!-- <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
         <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
           <i class="fas fa-code text-blue-500"></i> Programming Languages
         </h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">C#</span>
-          <span class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">C#</span>
-
-
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">JavaScript</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">TypeScript</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">SQL</span>
@@ -254,14 +314,16 @@
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Bootstrap</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">HTML5</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">CSS3</span>
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Tailwind CSS</span>
         </div>
       </div>
       
       <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
         <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
-          <i class="fas fa-server text-blue-500"></i> Backend Technologies
+          <i class="fas fa-server text-blue-500"></i> Languages & Frameworks
         </h3>
         <div class="flex flex-wrap gap-2">
+          <app-skill-name>C#</app-skill-name>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">.NET Core</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">.NET Framework</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">ASP.NET MVC</span>
@@ -271,13 +333,26 @@
         </div>
       </div>
       
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-server text-blue-500"></i> Realtime & Messaging
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">WebSocket</span>
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">SignalR</span>
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">RabbitMQ</span>
+        </div>
+      </div>
       <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
         <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
           <i class="fas fa-database text-blue-500"></i> Database
         </h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">SQL Server</span>
+          
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">MySQL</span>
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">PostgreSQL</span>
+          
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Stored Procedures</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Indexing</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Query Optimization</span>
@@ -286,7 +361,7 @@
       
       <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
         <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
-          <i class="fas fa-tools text-blue-500"></i> Developer Tools
+          <i class="fas fa-tools text-blue-500"></i>  Tools And Testing
         </h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Visual Studio</span>
@@ -295,6 +370,8 @@
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Postman</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Docker</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Swagger</span>
+          <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">xUnit</span>
+
         </div>
       </div>
       
@@ -308,8 +385,118 @@
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Repository Pattern</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Dependency Injection</span>
           <span class="px-4 py-2 bg-gradient-to-r  from-indigo-500 to-purple-500 text-white rounded-full text-sm font-medium">Unit of Work</span>
+
+        </div>
+      </div> -->
+
+      <!-- Languages & Frameworks -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-code text-blue-500"></i> Languages & Frameworks
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>C#</app-skill-name>
+          <app-skill-name>.NET Core</app-skill-name>
+          <app-skill-name>ASP.NET</app-skill-name>
+          <app-skill-name>Angular</app-skill-name>
+          <app-skill-name>TypeScript</app-skill-name>
+          <app-skill-name>JavaScript</app-skill-name>
         </div>
       </div>
+
+      <!-- Data & Persistence -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-database text-green-500"></i> Data & Persistence
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>SQL Server</app-skill-name>
+          <app-skill-name>PostgreSQL</app-skill-name>
+          <app-skill-name>MySQL</app-skill-name>
+          <app-skill-name>Dapper</app-skill-name>
+          <app-skill-name>Entity Framework</app-skill-name>
+          <app-skill-name>Caching (Redis, In-Memory)</app-skill-name>
+        </div>
+      </div>
+
+      <!-- Frontend & Visualization -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-paint-brush text-pink-500"></i> Frontend & Visualization
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>Angular</app-skill-name>
+          <app-skill-name>Tailwind CSS</app-skill-name>
+          <app-skill-name>Chart.js</app-skill-name>
+          <app-skill-name>ng2-charts</app-skill-name>
+          <app-skill-name>Responsive UI Design</app-skill-name>
+        </div>
+      </div>
+
+      <!-- Cloud & DevOps -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-cloud text-indigo-500"></i> Cloud & DevOps
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>AWS </app-skill-name>
+          <app-skill-name>Docker</app-skill-name>
+          <app-skill-name>Git</app-skill-name>
+          <app-skill-name>GitHub Actions</app-skill-name>
+          <app-skill-name>CI/CD Pipelines</app-skill-name>
+        </div>
+      </div>
+
+      <!-- Messaging & Real-Time -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-bolt text-yellow-500"></i> Messaging & Real-Time
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>SignalR</app-skill-name>
+          <app-skill-name>WebSockets</app-skill-name>
+          <app-skill-name>RabbitMQ</app-skill-name>
+        </div>
+      </div>
+
+      <!-- Testing & Quality -->
+      <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-vial text-purple-500"></i> Testing & Quality
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>xUnit</app-skill-name>
+          <app-skill-name>Postman</app-skill-name>
+          <app-skill-name>Swagger/OpenAPI</app-skill-name>
+        </div>
+      </div>
+      <!-- Concepts -->
+      <div
+        class="col-span-1 md:col-span-2 lg:col-span-3 bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="flex items-center gap-3 text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-lightbulb text-amber-500"></i> Concepts
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <app-skill-name>Object-Oriented Programming (OOP)</app-skill-name>
+          <app-skill-name>SOLID Principles</app-skill-name>
+          <app-skill-name>Design Patterns</app-skill-name>
+          <app-skill-name>Clean Architecture</app-skill-name>
+          <app-skill-name>Domain-Driven Design (DDD)</app-skill-name>
+          <app-skill-name>Microservices</app-skill-name>
+          <app-skill-name>Outbox Pattern</app-skill-name>
+          <app-skill-name>CQRS</app-skill-name>
+          <app-skill-name>Caching Strategies</app-skill-name>
+          <app-skill-name>Database Optimization</app-skill-name>
+          <app-skill-name>REST API Design</app-skill-name>
+          <app-skill-name>JWT Authentication & Authorization</app-skill-name>
+          <app-skill-name>Role-Based Access Control (RBAC)</app-skill-name>
+
+          <app-skill-name>Real-Time Communication (SignalR & WebSockets)</app-skill-name>
+          <app-skill-name>Unit Testing & CI/CD</app-skill-name>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </section>
@@ -319,7 +506,9 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 relative">
       Featured Projects
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full">
+      </div>
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -334,7 +523,8 @@
             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">jQuery</span>
           </div>
           <p class="text-gray-600 mb-4 leading-relaxed">
-            Comprehensive Contract Labour Management System aimed at optimizing workforce operations with essential modules including User Management, Employee Onboarding, and Notification Management.
+            Comprehensive Contract Labour Management System aimed at optimizing workforce operations with essential
+            modules including User Management, Employee Onboarding, and Notification Management.
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start gap-2 text-gray-600">
@@ -363,7 +553,7 @@
           </a> -->
         </div>
       </div>
-      
+
       <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
         <div class="h-48 bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center">
           <i class="fas fa-seedling text-6xl text-white"></i>
@@ -371,13 +561,15 @@
         <div class="p-6">
           <h3 class="text-xl font-bold text-gray-800 mb-2">EAgroServices</h3>
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">.NET Core Web API</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">.NET Core Web
+              API</span>
             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Angular</span>
             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">MySQL</span>
             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Git</span>
           </div>
           <p class="text-gray-600 mb-4 leading-relaxed">
-            Role-based web portal enabling farm owners, collection managers, farmers, transporters, and consignees to manage their business operations efficiently.
+            Role-based web portal enabling farm owners, collection managers, farmers, transporters, and consignees to
+            manage their business operations efficiently.
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start gap-2 text-gray-600">
@@ -401,7 +593,8 @@
               <span>Enhanced dashboards for each user role</span>
             </li>
           </ul>
-          <a href="https://github.com/RaviTambade/EAgroServices" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-full transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
+          <a href="https://github.com/RaviTambade/EAgroServices" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-full transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
             <i class="fab fa-github"></i> View Code
           </a>
         </div>
@@ -415,7 +608,9 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 relative">
       Education
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r  from-indigo-500 to-purple-500 rounded-full">
+      </div>
     </h2>
     <div class="max-w-4xl mx-auto">
       <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-8 shadow-lg">
@@ -429,9 +624,11 @@
           <span>Pune, Maharashtra</span>
         </div>
         <div class="text-center">
-          <p class="text-lg mb-4"><strong class="text-gray-800">CGPA:</strong> <span class="text-blue-600 font-bold">9.02/10</span></p>
+          <p class="text-lg mb-4"><strong class="text-gray-800">CGPA:</strong> <span
+              class="text-blue-600 font-bold">9.02/10</span></p>
           <p class="text-gray-600 leading-relaxed">
-            <strong class="text-gray-800">Relevant Coursework:</strong> Data Structures, Algorithms, Database Management, Software Engineering, Web Development, Computer Networks
+            <strong class="text-gray-800">Relevant Coursework:</strong> Data Structures, Algorithms, Database
+            Management, Software Engineering, Web Development, Computer Networks
           </p>
         </div>
       </div>
@@ -444,43 +641,50 @@
   <div class="max-w-6xl mx-auto px-5">
     <h2 class="text-4xl font-bold text-center mb-16 relative">
       Get In Touch
-      <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+      <div
+        class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full">
+      </div>
     </h2>
     <div class="max-w-4xl mx-auto text-center">
       <div class="mb-12">
         <h3 class="text-2xl font-bold mb-4">Let's Connect!</h3>
         <p class="text-lg opacity-90 leading-relaxed">
-          I'm always interested in new opportunities and exciting projects. 
+          I'm always interested in new opportunities and exciting projects.
           Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
           <i class="fas fa-envelope text-3xl mb-4 text-yellow-400"></i>
           <h4 class="text-lg font-semibold mb-2">Email</h4>
-          <a href="mailto:sahilmankar311&#64;gmail.com" class="text-white hover:text-yellow-400 transition-colors duration-300">sahilmankar311&#64;gmail.com</a>
+          <a href="mailto:sahilmankar311&#64;gmail.com"
+            class="text-white hover:text-yellow-400 transition-colors duration-300">sahilmankar311&#64;gmail.com</a>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
           <i class="fas fa-phone text-3xl mb-4 text-yellow-400"></i>
           <h4 class="text-lg font-semibold mb-2">Phone</h4>
-          <a href="tel:8530728589" class="text-white hover:text-yellow-400 transition-colors duration-300">+91 8530728589</a>
+          <a href="tel:8530728589" class="text-white hover:text-yellow-400 transition-colors duration-300">+91
+            8530728589</a>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
           <i class="fas fa-map-marker-alt text-3xl mb-4 text-yellow-400"></i>
           <h4 class="text-lg font-semibold mb-2">Location</h4>
           <span class="text-white">Pune, Maharashtra, India</span>
-    </div>
+        </div>
       </div>
-      
+
       <div class="flex justify-center gap-6">
-        <a href="https://github.com/sahilmankar" target="_blank" rel="noopener" class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
+        <a href="https://github.com/sahilmankar" target="_blank" rel="noopener"
+          class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
           <i class="fab fa-github text-2xl"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sahil-mankar-a64670232/" target="_blank" rel="noopener" class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
+        <a href="https://www.linkedin.com/in/sahil-mankar-a64670232/" target="_blank" rel="noopener"
+          class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
           <i class="fab fa-linkedin text-2xl"></i>
         </a>
-        <a href="mailto:sahilmankar311&#64;gmail.com" class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
+        <a href="mailto:sahilmankar311&#64;gmail.com"
+          class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:bg-white/20 hover:transform hover:-translate-y-1 hover:scale-110">
           <i class="fas fa-envelope text-2xl"></i>
         </a>
       </div>

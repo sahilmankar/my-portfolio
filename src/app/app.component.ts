@@ -1,8 +1,10 @@
 import { Component, HostListener } from '@angular/core';
+import { SkillNameComponent } from './skill-name/skill-name.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [SkillNameComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
