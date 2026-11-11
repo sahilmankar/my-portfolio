@@ -1,40 +1,27 @@
-import { Component, HostListener } from '@angular/core';
-import { SkillNameComponent } from './skill-name/skill-name.component';
+import { Component } from '@angular/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { AboutEducationComponent } from './components/about-education/about-education.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SkillNameComponent],
+  imports: [
+    NavbarComponent,
+    HeroComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    AboutEducationComponent,
+    ContactComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Sahil Mankar - Software Engineer';
-  isMenuOpen = false;
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-  }
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
-  }
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    this.closeMenu();
-  }
 }
