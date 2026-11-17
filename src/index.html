@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio of Sahil Mankar, Full Stack .NET / Angular Developer with 2.8+ years of experience building enterprise CLMS systems, biometric sync pipelines, multi-tenant SaaS platforms, and SQL Server optimizations.">
   <meta name="author" content="Sahil Mankar">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#111113">
 
   <!-- Open Graph / Social Sharing Preview -->
   <meta property="og:type" content="website">
@@ -29,8 +29,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('portfolio-theme');
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
-<body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
+<body class="bg-[#faf8f5] dark:bg-[#111113] text-[#0f172a] dark:text-zinc-100 antialiased selection:bg-[#1e3a8a]/20 selection:text-[#0f284e] dark:selection:bg-orange-500/20 dark:selection:text-orange-300 transition-colors duration-200">
   <app-root></app-root>
 </body>
 </html>

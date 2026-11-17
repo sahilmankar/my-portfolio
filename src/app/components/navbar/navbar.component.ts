@@ -1,5 +1,6 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { PROFILE_INFO } from '../../data/portfolio.data';
+import { ThemeService } from '../../services/theme.service';
 
 interface NavLink {
   id: string;
@@ -12,9 +13,13 @@ interface NavLink {
   template: `
     <header
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      [class]="isScrolled() ? 'bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/80' : 'bg-transparent'"
+      [class]="
+        isScrolled()
+          ? 'bg-[#faf8f5]/90 dark:bg-[#111113]/90 backdrop-blur-md border-b border-[#e8e4dc]/90 dark:border-zinc-800 shadow-xs dark:shadow-md dark:shadow-black/30'
+          : 'bg-transparent'
+      "
     >
-      <nav class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <nav class="w-full max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-20 h-16 flex items-center justify-between">
         <!-- Brand -->
         <a
           href="#home"
@@ -22,11 +27,11 @@ interface NavLink {
           class="flex items-center gap-2.5 group focus:outline-none"
         >
           <span
-            class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center font-mono text-xs font-semibold text-emerald-400 group-hover:border-emerald-500/50 transition-colors"
+            class="w-8 h-8 rounded-lg bg-[#eef2ff] dark:bg-zinc-900 border border-[#c7d2fe] dark:border-zinc-800 flex items-center justify-center font-mono text-xs font-bold text-[#1e3a8a] dark:text-orange-400 group-hover:border-[#1e3a8a] dark:group-hover:border-orange-500/60 transition-colors shadow-xs"
           >
             SM
           </span>
-          <span class="text-sm sm:text-base font-semibold tracking-tight text-zinc-100">
+          <span class="text-sm sm:text-base font-bold tracking-tight text-[#0f172a] dark:text-zinc-100 group-hover:text-[#1e3a8a] dark:group-hover:text-white transition-colors">
             {{ profile.name }}
           </span>
         </a>
@@ -39,10 +44,14 @@ interface NavLink {
                 [href]="'#' + link.id"
                 (click)="navigate($event, link.id)"
                 class="px-3.5 py-2 rounded-lg text-sm font-medium transition-colors"
-                [class.text-zinc-100]="activeSection() === link.id"
-                [class.bg-zinc-900]="activeSection() === link.id"
-                [class.text-zinc-400]="activeSection() !== link.id"
-                [class.hover:text-zinc-100]="activeSection() !== link.id"
+                [class.text-[#1e3a8a]]="activeSection() === link.id && themeService.currentTheme() === 'light'"
+                [class.bg-[#eef2ff]]="activeSection() === link.id && themeService.currentTheme() === 'light'"
+                [class.text-orange-400]="activeSection() === link.id && themeService.currentTheme() === 'dark'"
+                [class.bg-zinc-850]="activeSection() === link.id && themeService.currentTheme() === 'dark'"
+                [class.text-[#475569]]="activeSection() !== link.id"
+                [class.dark:text-zinc-400]="activeSection() !== link.id"
+                [class.hover:text-[#0f172a]]="activeSection() !== link.id"
+                [class.dark:hover:text-white]="activeSection() !== link.id"
               >
                 {{ link.label }}
               </a>
@@ -50,61 +59,105 @@ interface NavLink {
           }
         </ul>
 
-        <!-- Desktop CTA -->
+        <!-- Desktop CTA + Theme Toggle -->
         <div class="hidden md:flex items-center gap-2.5">
+          <!-- 1-Click Theme Switcher -->
+          <button
+            type="button"
+            (click)="themeService.toggleTheme()"
+            class="h-9 px-2.5 rounded-lg border border-[#e8e4dc] dark:border-zinc-800 bg-white dark:bg-zinc-900 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors hover:border-[#cbd5e1] dark:hover:border-zinc-700 shadow-xs"
+            [attr.title]="
+              themeService.currentTheme() === 'dark'
+                ? 'Switch to Warm Ivory & Navy (Light Mode)'
+                : 'Switch to Black & Orange (Dark Mode)'
+            "
+          >
+            @if (themeService.currentTheme() === 'dark') {
+              <i class="fa-solid fa-sun text-orange-400 text-sm"></i>
+              <span class="text-zinc-300">Light</span>
+            } @else {
+              <i class="fa-solid fa-moon text-[#1e3a8a] text-sm"></i>
+              <span class="text-[#0f172a]">Dark</span>
+            }
+          </button>
+
           <a
             [href]="profile.githubUrl"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            class="w-9 h-9 rounded-lg border border-zinc-800 bg-zinc-900/70 flex items-center justify-center text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-colors"
+            class="w-9 h-9 rounded-lg border border-[#e8e4dc] dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-center text-[#475569] dark:text-zinc-400 hover:text-[#0f172a] dark:hover:text-white hover:border-[#cbd5e1] dark:hover:border-zinc-700 transition-colors shadow-xs"
           >
             <i class="fa-brands fa-github text-sm"></i>
           </a>
+
           <a
             [href]="profile.resumeUrl"
             [attr.download]="profile.resumeFileName"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-emerald-500/35 bg-emerald-500/10 text-emerald-300 text-sm font-medium hover:bg-emerald-500/20 hover:border-emerald-400/60 transition-colors"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#c7d2fe] dark:border-orange-500/40 bg-[#eef2ff] dark:bg-orange-500/10 text-[#1e3a8a] dark:text-orange-300 text-sm font-semibold hover:bg-[#e0e7ff] dark:hover:bg-orange-500/20 transition-colors shadow-xs"
           >
             <i class="fa-solid fa-file-arrow-down text-xs"></i>
             <span>Resume</span>
           </a>
+
           <a
             href="#contact"
             (click)="navigate($event, 'contact')"
-            class="px-4 py-2 rounded-lg bg-zinc-100 text-zinc-950 text-sm font-semibold hover:bg-white transition-colors"
+            class="px-4 py-2 rounded-lg bg-[#1e3a8a] hover:bg-[#172554] dark:bg-orange-500 dark:hover:bg-orange-400 text-white dark:text-zinc-950 text-sm font-bold transition-colors shadow-sm"
           >
             Let's Talk
           </a>
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button
-          type="button"
-          class="md:hidden w-10 h-10 rounded-lg border border-zinc-800 bg-zinc-900/70 flex items-center justify-center text-zinc-300 hover:text-white"
-          [attr.aria-expanded]="isMenuOpen()"
-          aria-label="Toggle navigation menu"
-          (click)="toggleMenu()"
-        >
-          <i class="fa-solid" [class.fa-bars]="!isMenuOpen()" [class.fa-xmark]="isMenuOpen()"></i>
-        </button>
+        <div class="md:hidden flex items-center gap-2">
+          <button
+            type="button"
+            (click)="themeService.toggleTheme()"
+            class="w-9 h-9 rounded-lg border border-[#e8e4dc] dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-center text-sm shadow-xs"
+            [attr.aria-label]="
+              themeService.currentTheme() === 'dark'
+                ? 'Switch to Warm Ivory & Navy'
+                : 'Switch to Black & Orange'
+            "
+          >
+            @if (themeService.currentTheme() === 'dark') {
+              <i class="fa-solid fa-sun text-orange-400"></i>
+            } @else {
+              <i class="fa-solid fa-moon text-[#1e3a8a]"></i>
+            }
+          </button>
+
+          <button
+            type="button"
+            class="w-9 h-9 rounded-lg border border-[#e8e4dc] dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-center text-[#0f172a] dark:text-zinc-200"
+            [attr.aria-expanded]="isMenuOpen()"
+            aria-label="Toggle navigation menu"
+            (click)="toggleMenu()"
+          >
+            <i class="fa-solid" [class.fa-bars]="!isMenuOpen()" [class.fa-xmark]="isMenuOpen()"></i>
+          </button>
+        </div>
       </nav>
 
       <!-- Mobile Drawer -->
       @if (isMenuOpen()) {
-        <div class="md:hidden bg-zinc-950/95 backdrop-blur-lg border-b border-zinc-800 animate-fade-in">
-          <ul class="max-w-6xl mx-auto px-5 py-4 space-y-1">
+        <div class="md:hidden bg-[#faf8f5]/98 dark:bg-[#111113]/98 backdrop-blur-lg border-b border-[#e8e4dc] dark:border-zinc-800 animate-fade-in shadow-xl">
+          <ul class="w-full max-w-[1720px] mx-auto px-6 sm:px-10 py-4 space-y-1">
             @for (link of navLinks; track link.id) {
               <li>
                 <a
                   [href]="'#' + link.id"
                   (click)="navigate($event, link.id)"
                   class="block px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors"
-                  [class.bg-zinc-900]="activeSection() === link.id"
-                  [class.text-emerald-400]="activeSection() === link.id"
-                  [class.text-zinc-300]="activeSection() !== link.id"
+                  [class.bg-[#eef2ff]]="activeSection() === link.id && themeService.currentTheme() === 'light'"
+                  [class.text-[#1e3a8a]]="activeSection() === link.id && themeService.currentTheme() === 'light'"
+                  [class.bg-zinc-850]="activeSection() === link.id && themeService.currentTheme() === 'dark'"
+                  [class.text-orange-400]="activeSection() === link.id && themeService.currentTheme() === 'dark'"
+                  [class.text-[#334155]]="activeSection() !== link.id"
+                  [class.dark:text-zinc-300]="activeSection() !== link.id"
                 >
                   {{ link.label }}
                 </a>
@@ -117,7 +170,7 @@ interface NavLink {
                 target="_blank"
                 rel="noopener noreferrer"
                 (click)="isMenuOpen.set(false)"
-                class="flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-emerald-500/35 bg-emerald-500/10 text-emerald-300 text-sm font-semibold"
+                class="flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-[#c7d2fe] dark:border-orange-500/40 bg-[#eef2ff] dark:bg-orange-500/15 text-[#1e3a8a] dark:text-orange-300 text-sm font-semibold"
               >
                 <i class="fa-solid fa-file-arrow-down text-xs"></i>
                 <span>Download Resume (PDF)</span>
@@ -131,6 +184,7 @@ interface NavLink {
 })
 export class NavbarComponent {
   readonly profile = PROFILE_INFO;
+  readonly themeService = inject(ThemeService);
   readonly isMenuOpen = signal(false);
   readonly isScrolled = signal(false);
   readonly activeSection = signal('home');

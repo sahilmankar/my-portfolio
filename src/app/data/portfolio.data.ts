@@ -108,7 +108,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: 'Languages',
     icon: 'fa-solid fa-code',
     subtitle: 'Core strongly-typed & query languages',
-    items: ['C#', 'SQL', 'TypeScript', 'JavaScript'],
+    items: ['C#', 'SQL', 'Python', 'TypeScript', 'JavaScript'],
   },
   {
     title: 'Backend & Services',
@@ -119,6 +119,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       '.NET Framework',
       'ASP.NET Core Web API',
       'ASP.NET MVC',
+      'FastAPI',
       'Entity Framework Core',
       'Dapper',
       'SignalR',
@@ -238,6 +239,13 @@ export const PROJECTS: ProjectItem[] = [
       'Optimized mobile APIs using cursor-based pagination and DTO projection, reducing response payload sizes by ~30%.',
       'Built an Angular 21 mobile-first frontend with Standalone Components and Signals, packaged via Capacitor, and deployed on AWS EC2 behind Nginx.',
     ],
+    workflowSteps: [
+      'Milk Collection & FAT/SNF Testing',
+      'Local Edge Store (SQLite / IndexedDB)',
+      'Idempotent Background Cloud Sync',
+      'Quality Pricing & Deductions Engine',
+      'Ledger & Payment Generation',
+    ],
     techStack: [
       'Angular 21',
       'TailwindCSS v4',
@@ -295,6 +303,68 @@ export const PROJECTS: ProjectItem[] = [
       'Maintained data consistency in PostgreSQL across multiple workflow stages where different users update the same business transaction.',
     ],
     techStack: ['.NET Core 8', 'React Native', 'PostgreSQL'],
+  },
+  {
+    id: 'aadhaar-extraction',
+    title: 'Aadhaar Extraction & Format Validation Microservice',
+    tagline: 'Privacy-first KYC engine with deep-learning OCR, Verhoeff checksum & UIDAI Secure QR cross-matching.',
+    category: 'Data & Tooling',
+    featured: true,
+    role: 'Creator & Microservice Architect',
+    summary:
+      'An enterprise-grade, privacy-first KYC microservice designed to ingest Aadhaar card photos (front/back) and e-Aadhaar PDFs, extract resident demographics via deep-learning OCR, decode embedded UIDAI Secure QR codes, and execute multi-factor authenticity triangulation purely in volatile RAM with zero disk retention.',
+    architectureNotes:
+      'Engineered with FastAPI and Python 3.11 using a three-way parallel coroutine pipeline (asyncio.gather) across OCR, visual layout validation (ISO CR80 geometry & color saturation), and cryptographic QR decompression. Mathematical validity is verified using the Verhoeff Dihedral Group (D10) checksum, and anti-tampering is enforced by cross-matching decompressed QR data against OCR text.',
+    architectureDiagram: [
+      {
+        layer: '01 · Ingestion & Memory',
+        component: 'FastAPI + PyMuPDF + OpenCV',
+        details: 'Zero-PII disk retention (volatile RAM), Laplacian blur score & ROI isolation',
+        linkLabel: 'Async Pipeline',
+      },
+      {
+        layer: '02 · Three-Way Engine',
+        component: 'PaddleOCR 3.x + pyzbar',
+        details: 'Bilingual line recognition (devanagari/english) & UIDAI Secure QR BigInt/Zlib decoder',
+        linkLabel: 'Cross-Match',
+      },
+      {
+        layer: '03 · Triangulation',
+        component: 'Verhoeff D10 & Anti-Fraud',
+        details: 'Mathematical 12-digit checksum + demographic cross-matching (Name, DOB, Last-4, PIN)',
+        linkLabel: 'Structured DTO',
+      },
+      {
+        layer: '04 · Delivery & Portal',
+        component: 'Swagger OpenAPI & Vercel UI',
+        details: 'Real-time extraction portal, 1-click synthetic benchmark & Docker container',
+      },
+    ],
+    workflowSteps: [
+      'Card Photo / e-Aadhaar PDF',
+      'In-Memory Preprocessing & ROI',
+      'PaddleOCR & Secure QR Decoding',
+      'Verhoeff Checksum & Cross-Match',
+      'Validated KYC JSON Response',
+    ],
+    highlights: [
+      'Architected an automated KYC extraction microservice processing Aadhaar card images and multi-page e-Aadhaar PDFs with zero disk retention (strictly in-memory volatile RAM for privacy compliance).',
+      'Engineered a three-way parallel processing pipeline using asyncio.gather to concurrently run deep-learning OCR (PaddleOCR PP-OCRv5), visual card format verification (ISO CR80 aspect ratio & palette), and QR code decompression.',
+      'Implemented UIDAI 12-digit Aadhaar number validation using the mathematical Verhoeff Dihedral Group (D5/D10) checksum algorithm to detect single-digit and adjacent transposition errors.',
+      'Built a cryptographic cross-match verification engine decoding UIDAI Secure QR codes (V2/V3 Zlib binary BigInt & V1 XML) to cross-audit decoded demographics against printed OCR text, flagging any tampering attempt.',
+      'Delivered an interactive web portal and Swagger/OpenAPI microservice with 1-click synthetic benchmark testing, Docker containerization, and live cloud deployment.',
+    ],
+    techStack: [
+      'Python 3.11',
+      'FastAPI',
+      'PaddleOCR 3.x',
+      'OpenCV',
+      'PyMuPDF',
+      'pyzbar',
+      'Docker',
+    ],
+    githubUrl: 'https://github.com/sahilmankar/AadharExtraction',
+    liveUrl: 'https://aadhar-extraction.vercel.app/',
   },
   {
     id: 'pdf-transformation-viewer',
@@ -382,7 +452,7 @@ export const PROJECTS: ProjectItem[] = [
       'Integrated action-oriented conversion CTAs including direct ordering links, click-to-call, party-order inquiries, and store location info.',
     ],
     techStack: ['Angular', 'TypeScript', 'Static Pages', 'Responsive UI'],
-    liveUrl: 'https://salezii.com/our-work/shivshahi-biryani-website',
+    liveUrl: 'https://shivshahibiryani.com',
   },
 ];
 
